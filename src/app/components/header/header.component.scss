@@ -1,0 +1,23 @@
+@use "./../../../assets/styles/variables.scss";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  background-color: variables.$main-color-200;
+  vertical-align: middle;
+  height: variables.$header-height;
+  padding: 10px;
+}
+
+img {
+  aspect-ratio: 1;
+  padding: 1vh;
+  height: 80px;
+  object-fit: cover;
+}
+
+p {
+  padding: 20px;
+  align-self: auto;
+  vertical-align: middle;
+}

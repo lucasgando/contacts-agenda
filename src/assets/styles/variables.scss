@@ -1,0 +1,35 @@
+$header-height: 100px;
+$footer-height: 16px;
+$body-height: calc(100vh - $header-height - $footer-height);
+
+$main-color: black;
+$main-color-light: lightblue;
+
+$font-color: white;
+$font-color-light: black;
+
+$main-color-50: #efe5fd;
+$main-color-100: #d4bff9;
+$main-color-200: #b794f6;
+$main-color-300: #9965f4;
+$main-color-400: #7e3ff2;
+$main-color-500: #6002ee;
+$main-color-600: #5300e8;
+$main-color-700: #3d00e0;
+$main-color-800: #1c00db;
+$main-color-900: #0000d6;
+
+$complementary-color-50: #f2fde4;
+$complementary-color-100: #defabb;
+$complementary-color-200: #c6f68d;
+$complementary-color-300: #aaf255;
+$complementary-color-400: #90ee02;
+$complementary-color-500: #75e900;
+$complementary-color-600: #61d800;
+$complementary-color-700: #41c300;
+$complementary-color-800: #09af00;
+$complementary-color-900: #008b00;
+
+$error-color: red;
+$background-color: whitesmoke;
+$border-color: gray;
