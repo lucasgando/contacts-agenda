@@ -10,14 +10,17 @@ header {
 }
 
 img {
+  padding: 0px;
   aspect-ratio: 1;
   padding: 1vh;
-  height: 80px;
   object-fit: cover;
+  height: 50px;
+  border-radius: 50%;
 }
 
-p {
+span {
   padding: 20px;
+  margin: auto;
   align-self: auto;
   vertical-align: middle;
 }
