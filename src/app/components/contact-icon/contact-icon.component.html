@@ -1,1 +1,6 @@
-<p>contact-icon works!</p>
+<div id="container">
+  <img *ngIf="contact.profilePicture" src="{{contact.profilePicture}}">
+  <div *ngIf="!contact.profilePicture" id="color-circle">
+      <span>{{contact.name[0]}}{{contact.lastName[0]}}</span>
+  </div>
+</div>

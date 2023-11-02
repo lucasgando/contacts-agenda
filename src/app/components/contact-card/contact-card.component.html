@@ -1,1 +1,7 @@
-<p>contact-card works!</p>
+<div class="contact-card">
+  <contact-icon [contact]="contact"></contact-icon>
+  <p>{{contact.name + " " + contact.lastName}}</p>
+  <p>{{contact.address}}</p>
+  <p>{{contact.email}}</p>
+  <p>{{contact.phoneNumber}}</p>
+</div>

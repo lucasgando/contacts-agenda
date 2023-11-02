@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Contact } from '../../interfaces/contact';
+import { ContactIconComponent } from "../contact-icon/contact-icon.component";
 
 @Component({
-  selector: 'app-contact-card',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './contact-card.component.html',
-  styleUrls: ['./contact-card.component.scss']
+    selector: 'app-contact-card',
+    standalone: true,
+    templateUrl: './contact-card.component.html',
+    styleUrls: ['./contact-card.component.scss'],
+    imports: [CommonModule, ContactIconComponent]
 })
 export class ContactCardComponent {
-
+  @Input() contact: Contact = {
+    id: 0,
+    name: '',
+    lastName: '',
+    address: '',
+    email: '',
+    profilePicture: '',
+    phoneNumber: ''
+  }
 }

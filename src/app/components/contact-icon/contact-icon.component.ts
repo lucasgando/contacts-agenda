@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Contact } from '../../interfaces/contact';
 
 @Component({
-  selector: 'app-contact-icon',
+  selector: 'contact-icon',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './contact-icon.component.html',
   styleUrls: ['./contact-icon.component.scss']
 })
 export class ContactIconComponent {
-
+  @Input({required: true}) contact: Contact;
 }
