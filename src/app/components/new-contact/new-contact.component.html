@@ -1,0 +1,37 @@
+<form #contactform="ngForm" (ngSubmit)="createContact()">
+  <h2>{{contact.id ? "edit contact" : "new contact"}}</h2>
+
+  <div>
+    <label for="name">name</label>
+    <input type="text" name="name" id="name" [(ngModel)]="contact.name" required>
+  </div>
+
+  <div>
+    <label for="last-name">last name</label>
+    <input type="text" name="last-name" id="last-name" [(ngModel)]="contact.last-name">
+  </div>
+
+  <div>
+    <label for="phone-number">phone number</label>
+    <input type="text" name="phone-number" id="phone-number" [(ngModel)]="contact.phone">
+  </div>
+
+  <div>
+
+    <label for="email">e-mail</label>
+    <input type="text" name="email" id="email" [(ngModel)]="contact.e-mail">
+  </div>
+
+  <div>
+    <label for="address">address</label>
+    <input type="text" name="address" id="address" [(ngModel)]="contact.address">
+  </div>
+
+  <div>
+    <label for="contact-picture">picture</label>
+    <input type="text" name="contact-picture" id="contact-picture" [(ngModel)]="contact.picture">
+  </div>
+
+  <button type="submit" [disabled]="contactForm.invalid">{{contact.id ? "edit" : "create"}}</button>
+  <button type="button" (click)="closeDialog.emit()">cancel</button>
+</form>

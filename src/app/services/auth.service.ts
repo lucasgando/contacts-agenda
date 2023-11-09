@@ -31,7 +31,7 @@ export class AuthService {
     return true;
   }
 
-  async register(registerData: RegisterData): Promise<void> {
+  async register(registerData: RegisterData): Promise<boolean> {
     const res = await fetch(API + 'user', {
       method: 'POST',
       headers: {
@@ -39,6 +39,7 @@ export class AuthService {
       },
       body: JSON.stringify(registerData),
     });
+    return res.status == 302;
   }
 
   isLoggedIn(): boolean {

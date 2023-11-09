@@ -3,6 +3,7 @@ import { CanActivateFn, Router } from '@angular/router';
 import { AuthService } from './../services/auth.service';
 
 export const publicGuard: CanActivateFn = (route, state) => {
+  console.log("guard");
   const auth = inject(AuthService);
   if (auth.isLoggedIn()) {
     const router = inject(Router);

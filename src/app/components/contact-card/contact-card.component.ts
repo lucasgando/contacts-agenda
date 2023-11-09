@@ -4,7 +4,7 @@ import { Contact } from '../../interfaces/contact';
 import { ContactIconComponent } from "../contact-icon/contact-icon.component";
 
 @Component({
-    selector: 'app-contact-card',
+    selector: 'contact-card',
     standalone: true,
     templateUrl: './contact-card.component.html',
     styleUrls: ['./contact-card.component.scss'],

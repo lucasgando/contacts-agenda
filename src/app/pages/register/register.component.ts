@@ -1,6 +1,7 @@
-import { Component, inject } from '@angular/core';
+import { Component, WritableSignal, inject, signal } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { RegisterData } from '../../interfaces/user';
 
 @Component({
   selector: 'app-register',
@@ -11,10 +12,28 @@ export class RegisterComponent {
   authService = inject(AuthService);
   router = inject(Router);
 
+  loadingSpinner: WritableSignal<boolean> = signal(false);
+  registerError: WritableSignal<boolean> = signal(false);
+
+  registerData: RegisterData = {
+    password: '',
+    username: '',
+    name: '',
+    lastName: ''
+  };
+
   async register() {
-    const res = await this.authService.register();
-    if (res)
-      this.router.navigate(["/contacts"]);
+    this.loadingSpinner.set(true);
+    this.registerError.set(false);
+    try {
+      const res = await this.authService.register(this.registerData);
+      if (res) 
+        this.router.navigate(['contacts']);
+      else
+        this.registerError.set(true);
+    } catch (error) {
+      console.log(error);
+    }
     return;
   }
 }

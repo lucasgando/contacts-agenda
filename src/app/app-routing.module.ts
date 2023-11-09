@@ -11,10 +11,6 @@ const routes: Routes = [
     pathMatch: "full"
   },
   {
-    path:"**",
-    loadChildren: ()=> import('./pages/error/error.module').then(m => m.ErrorModule)
-  },
-  {
     path: "login",
     canActivate: [publicGuard],
     loadChildren: ()=> import('./pages/login/login.module').then(m => m.LoginModule)
@@ -28,7 +24,16 @@ const routes: Routes = [
     path: "contacts",
     canActivate: [userGuard, adminGuard],
     loadChildren: ()=> import('./pages/contacts/contacts.module').then(m => m.ContactsModule)
-  }
+  },
+  {
+    path: 'profile',
+    canActivate: [userGuard, adminGuard],
+    loadChildren: ()=> import('./pages/profile/profile.module').then(m => m.ProfileModule)
+  },
+  {
+    path:"**",
+    loadChildren: ()=> import('./pages/error/error.module').then(m => m.ErrorModule)
+  },
 ];
 
 @NgModule({

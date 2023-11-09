@@ -10,5 +10,13 @@ import { Contact } from '../../interfaces/contact';
   styleUrls: ['./contact-icon.component.scss']
 })
 export class ContactIconComponent {
-  @Input({required: true}) contact: Contact;
+  @Input({required: true}) contact: Contact = {
+    id: 0,
+    name: '',
+    lastName: '',
+    address: '',
+    email: '',
+    profilePicture: '',
+    phoneNumber: ''
+  };
 }

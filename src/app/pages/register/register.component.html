@@ -1,25 +1,25 @@
-<div id="container">
-  <div class="form-container">
+<div>
+  <div>
       <h1>Register</h1>
-      <form #loginForm="ngForm" (ngSubmit)="register()">
-          <label for="user" class="sr-only">Username</label>
+      <form #registerForm="ngForm" (ngSubmit)="register()">
+          <label for="user">username</label>
           <input type="text" name="user" id="user" ngModel
               placeholder="User" autocomplete="username"
               required>
-          <p *ngIf="!loginForm.value.user" class="error">This field is required.</p>
+          <p *ngIf="!registerForm.value.user" class="error">this field is required.</p>
 
-          <label for="email" class="sr-only">E-Mail</label>
-          <input type="text" name="email" id="email" placeholder="E-Mail">
-          <p *ngIf="!loginForm.value.email" class="error">This field is required.</p>
+          <label for="email">e-mail</label>
+          <input type="text" name="email" id="email" placeholder="E-Mail" required>
+          <p *ngIf="!registerForm.value.email" class="error">this field is required.</p>
 
-          <label for="password" class="sr-only">Password</label>
+          <label for="password">password</label>
           <input type="password" name="password" id="password" placeholder="Password"
-              autocomplete="current-password" required minlength="8" ngModel>
-          <p class="error" *ngIf="loginForm.value.password.length < 8">Passwords need a minimum of 8 characters.</p>
+              autocomplete="current-password" required minlength="8" ngModel required>
+          <p class="error" *ngIf="registerForm.value.password.length < 8">passwords need a minimum of 8 characters.</p>
 
-          <button type="submit" [disabled]="loginForm.invalid">Log in</button>
-          <p class="escondido error">Error logging in.</p>
+          <button type="submit" [disabled]="registerForm.invalid">Register</button>
+          <p class="hidden-error">Error registering</p>
       </form>
-      <p>Don't have an account? - <a [routerLink]="['/register']" routerLinkActive="router-link-active" >Register</a></p>
+      <p>Already have an account? - <a [routerLink]="['/login']" routerLinkActive="router-link-active">login</a></p>
   </div>
 </div>
