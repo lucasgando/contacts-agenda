@@ -16,6 +16,7 @@ export class AuthService {
   }
 
   async login(loginData: LoginData): Promise<boolean> {
+    return false;
     const res = await fetch(API + 'authentication', {
       method: 'POST',
       headers: {

@@ -12,7 +12,7 @@
       <input type="password" name="password" id="password" placeholder="Password" autocomplete="current-password" required minlength="8" ngModel>
       <p class="error" *ngIf="loginForm.value.password.length < 8">passwords must have a minimum of 8 characters.</p>
       <button type="submit" [disabled]="loginForm.invalid">log in</button>
-      <p class="escondido error">error logging in.</p>
+      <p *ngIf="loginError()">error logging in.</p> <!-- change css -->
     </form>
     <p id="reg-text">Don't have an account? -
       <a [routerLink]="['/register']" routerlinkactive="router-link-active">Register</a>
