@@ -27,6 +27,7 @@
         #password="ngModel"
       />
       <button type="submit" [disabled]="loginForm.invalid">log in</button>
+      <img class="spinner" src="./../../../assets/images/spinner.svg" alt="Loading..." *ngIf="loadingSpinner()">
       <p *ngIf="loginError()">invalid email or password</p>
       <!-- change css -->
     </form>

@@ -49,6 +49,7 @@
       </p>
 
       <button type="submit" [disabled]="registerForm.invalid">register</button>
+      <img class="spinner" src="./../../../assets/images/spinner.svg" alt="Loading..." *ngIf="loadingSpinner()">
       <p class="hidden-error" *ngIf="registerError()">this email is already taken</p>
     </form>
     <p>

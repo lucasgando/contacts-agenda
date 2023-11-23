@@ -1,12 +1,12 @@
 @use './../../../assets/styles/variables.scss';
 
 .contact-card {
-  padding: 10px 5px;
   display: grid;
   grid-template-columns: 1fr 2fr 2fr 2fr 2fr;
+  padding: 10px 5px;
   cursor: pointer;
   align-items: center;
-  background-color: variables.$accents-color;
+  background-color: variables.$background-border-color;
   contact-icon {
       width: 50%;
       margin: auto;

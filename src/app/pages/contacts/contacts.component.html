@@ -1,4 +1,16 @@
-<div>
+<div class="banner-container">
+  <span id="filler"></span>
+  <span id="info">
+    <span></span>
+    <p>Full name</p>
+    <p>E-mail</p>
+    <p>Phone number</p>
+    <p>Address</p>
+  </span>
+  <span id="filler"></span>
+</div>
+
+<div class="flex-column">
   <contact-card
     *ngFor="let contact of contacts"
     [contact]="contact"
@@ -8,8 +20,12 @@
   </contact-card>
 </div>
 
-<img src="./../../../assets/images/new-contact.png" class="fab" (click)="contactFormDialog.showModal()"/>
+<img
+  src="./../../../assets/images/new-contact.png"
+  class="fab"
+  (click)="contactFormDialog.showModal()"
+/>
 
 <dialog method="dialog" #contactFormDialog>
-    <app-new-contact (closeDialog)="contactFormDialog.close()"></app-new-contact>
+  <app-new-contact (closeDialog)="contactFormDialog.close()"></app-new-contact>
 </dialog>
