@@ -16,4 +16,8 @@ export class ContactsComponent implements OnInit {
       this.contacts = res;
     });
   }
+
+  addContact(contact: Contact): void {
+    this.contacts.push(contact);
+  }
 }

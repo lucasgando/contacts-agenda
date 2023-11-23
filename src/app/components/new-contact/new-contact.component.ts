@@ -16,6 +16,7 @@ export class NewContactComponent {
   service: ContactsService = inject(ContactsService);
 
   @Output() closeDialog = new EventEmitter();
+  @Output() newContact = new EventEmitter<Contact>();
   @Input({required: false}) contact: Contact = {
     id: 0,
     name: '',
@@ -47,6 +48,7 @@ export class NewContactComponent {
     const res = await this.service.create(this.contact);
     this.closeDialog.emit();
     if (res) {
+      this.newContact.emit(this.contact);
       successMessage("Contact created");
     } else {
       errorMessage("Failed to create contact");

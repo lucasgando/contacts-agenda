@@ -27,5 +27,5 @@
 />
 
 <dialog method="dialog" #contactFormDialog>
-  <app-new-contact (closeDialog)="contactFormDialog.close()"></app-new-contact>
+  <app-new-contact (closeDialog)="contactFormDialog.close()" (newContact)="addContact($event)"></app-new-contact>
 </dialog>
