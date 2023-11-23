@@ -16,8 +16,7 @@ export class AuthService {
   }
 
   async login(loginData: LoginData): Promise<boolean> {
-    return false;
-    const res = await fetch(API + 'authentication', {
+    const res = await fetch(API + 'Authentication', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -40,7 +39,7 @@ export class AuthService {
       },
       body: JSON.stringify(registerData),
     });
-    return res.status == 302;
+    return res.status == 201;
   }
 
   isLoggedIn(): boolean {
@@ -50,7 +49,7 @@ export class AuthService {
   logOut(): void {
     localStorage.removeItem('token');
     this.loggedIn = false;
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
   }
 
   isAdmin(): boolean {

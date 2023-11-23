@@ -1,0 +1,73 @@
+@use './../../../assets/styles/variables.scss';
+@use './../../../assets/styles/forms.scss';
+
+h1, h2, p {
+  text-align: center;
+  width: max-content;
+  height: max-content;
+  color: variables.$backg-border-font-color;
+}
+
+.container {
+  display: grid;
+
+  width: fit-content;
+  height: fit-content;
+
+  margin: 50px auto auto auto;
+  padding: 10px;
+
+  border: 5px solid black;
+  border-radius: 5%;
+
+  background-color: variables.$background-border-color;
+  color: black;
+}
+
+#head {
+  display: grid;
+
+  width: auto;
+  height: fit-content;
+  
+  padding: 5px;
+  
+  border-bottom: 2px solid black;
+
+  contact-icon {
+    margin: 10px auto;
+    object-fit: cover;
+    height: 15vh;
+    aspect-ratio: 1;
+    font-size: 2.2em;
+  }
+  h1 {
+    margin: 0 auto;
+  }
+}
+
+#category {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  width: auto;
+  h2 {
+    margin: 2px 2px 2px auto;
+  }
+  p {
+    margin: 2px auto 2px 2px;
+  }
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+
+  margin: 20px auto auto auto;
+
+  button {
+    width: 80px;
+    margin: auto;
+    color: black;
+  }
+}

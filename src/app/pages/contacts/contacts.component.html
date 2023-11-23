@@ -1,7 +1,15 @@
 <div>
-  <contact-card *ngFor="let contact in Contacts" 
-    [contact]="contact" 
-    [routerLink]="[contact.id]" 
-    routerLinkActive="router-link-active">
+  <contact-card
+    *ngFor="let contact of contacts"
+    [contact]="contact"
+    [routerLink]="[contact.id]"
+    routerLinkActive="router-link-active"
+  >
   </contact-card>
 </div>
+
+<img src="./../../../assets/images/new-contact.png" class="fab" (click)="contactFormDialog.showModal()"/>
+
+<dialog method="dialog" #contactFormDialog>
+    <app-new-contact (closeDialog)="contactFormDialog.close()"></app-new-contact>
+</dialog>

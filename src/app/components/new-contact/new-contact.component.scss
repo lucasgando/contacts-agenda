@@ -1,0 +1,13 @@
+@use './../../../assets/styles/forms.scss';
+
+h1 {
+  text-align: center;
+}
+div {
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+}
+button{
+  margin-top: 10px;
+}

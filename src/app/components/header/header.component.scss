@@ -1,26 +1,43 @@
 @use "./../../../assets/styles/variables.scss";
 
+* {
+  color: variables.$main-font-color;
+}
+
 header {
   display: flex;
   justify-content: space-between;
-  background-color: variables.$main-color-200;
+  background-color: variables.$main-color;
   vertical-align: middle;
   height: variables.$header-height;
-  padding: 10px;
+  padding: 0px;
 }
 
-img {
-  padding: 0px;
+#logo {
   aspect-ratio: 1;
-  padding: 1vh;
   object-fit: cover;
-  height: 50px;
+  height: 80%;
+  margin: auto 10px;
   border-radius: 50%;
+  overflow: auto;
+  border: 1px solid black;
+}
+
+#logo-title {
+  margin: auto auto auto 10px;
+  align-self: auto;
+  vertical-align: middle;
 }
 
 span {
-  padding: 20px;
-  margin: auto;
+  margin: auto 10px;
   align-self: auto;
   vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  &:hover {
+    cursor: pointer;
+  }
 }

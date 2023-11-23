@@ -1,7 +1,6 @@
 export interface User{
   username: string,
-  name: string,
-  lastName: string
+  email: string
 }
 
 export interface RegisterData extends User {
@@ -9,6 +8,6 @@ export interface RegisterData extends User {
 }
 
 export interface LoginData {
-  username: string,
+  email: string,
   password: string
 }

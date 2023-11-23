@@ -1,6 +1,6 @@
 <div id="container">
-  <img *ngIf="contact.profilePicture" src="{{contact.profilePicture}}">
+  <img *ngIf="contact.profilePicture" src="{{ contact.profilePicture }}" alt="404 image not found"/>
   <div *ngIf="!contact.profilePicture" id="color-circle">
-      <span>{{contact.name[0]}}{{contact.lastName[0]}}</span>
+    <span>{{ contact.name[0].toLocaleUpperCase() }}{{ contact.lastName[0].toLocaleUpperCase() }}</span>
   </div>
 </div>

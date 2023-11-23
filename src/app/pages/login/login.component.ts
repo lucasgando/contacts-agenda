@@ -12,12 +12,11 @@ export class LoginComponent {
   loginError : WritableSignal < boolean > = signal(false);
 
   loginData : LoginData = {
-    username: '',
+    email: '',
     password: ''
   };
 
   async login() {
-    console.log("trying login");
     this.loginError.set(false);
     this.loadingSpinner.set(true);
     try {

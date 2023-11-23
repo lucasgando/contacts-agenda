@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Contact } from '../../interfaces/contact';
 import { ContactsService } from '../../services/contacts.service';
 import { FormsModule } from '@angular/forms';
+import { errorMessage, successMessage } from '../../helpers/messages';
 
 @Component({
   selector: 'app-new-contact',
@@ -22,22 +23,33 @@ export class NewContactComponent {
     address: '',
     email: '',
     profilePicture: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    description: ''
   };
 
   async onSubmit(){
-    this.contact.id ?
-    this.editContact() :
-    this.addContact();
+    this.contact.id
+    ? this.editContact()
+    : this.addContact();
   }
 
   async editContact() {
-    throw new console.error('Edit contact not implemented');
-    
+    const res = await this.service.edit(this.contact);
+    this.closeDialog.emit();
+    if (res) {
+      successMessage("Contact edited");
+    } else {
+      errorMessage("Failed to edit contact");
+    }
   }
 
-  addContact() {
-    throw new console.error('Add contact not implemented');
-
+  async addContact() {
+    const res = await this.service.create(this.contact);
+    this.closeDialog.emit();
+    if (res) {
+      successMessage("Contact created");
+    } else {
+      errorMessage("Failed to create contact");
+    }
   }
 }

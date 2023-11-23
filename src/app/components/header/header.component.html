@@ -1,8 +1,8 @@
 <header>
-  <img src="./assets/images/logo.png" alt="Logo">
-  <span><a [routerLink]="['/profile']" routerLinkActive="router-link-active">Profile</a></span>
-  <span><a [routerLink]="['/contacts']" routerLinkActive="router-link-active">Contacts</a></span>
-  <span><a [routerLink]="['/']" routerLinkActive="router-link-active">Agendas SRL</a></span>
-  <span><a [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a></span>
-  <span><a [routerLink]="['/register']" routerLinkActive="router-link-active">Register</a></span>
+  <img id="logo" src="./assets/images/logo.png" alt="Logo">
+  <span id="logo-title"><a [routerLink]="['/']">Agendas SRL</a></span>
+  <span *ngIf="authService.isLoggedIn()"><a [routerLink]="['/contacts']">Contacts</a></span>
+  <span *ngIf="!authService.isLoggedIn()"><a [routerLink]="['/login']">Login</a></span>
+  <span *ngIf="!authService.isLoggedIn()"><a [routerLink]="['/register']">Register</a></span>
+  <span *ngIf="authService.isLoggedIn()"><a (click)="authService.logOut()">Logout</a></span>
 </header>

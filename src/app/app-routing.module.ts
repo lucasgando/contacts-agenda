@@ -26,9 +26,9 @@ const routes: Routes = [
     loadChildren: ()=> import('./pages/contacts/contacts.module').then(m => m.ContactsModule)
   },
   {
-    path: 'profile',
+    path: "contacts/:id",
     canActivate: [userGuard, adminGuard],
-    loadChildren: ()=> import('./pages/profile/profile.module').then(m => m.ProfileModule)
+    loadChildren: ()=> import('./pages/contact-details/contact-details.module').then(m => m.ContactDetailsModule)
   },
   {
     path:"**",

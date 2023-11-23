@@ -1,21 +1,40 @@
 <div id="container">
   <div class="form-container">
     <h1>login</h1>
-    <p>
-      log in to access the contacts service.
-    </p>
+    <p>log in to access the contacts service.</p>
     <form #loginForm="ngForm" (ngSubmit)="login()">
-      <label for="user" class="sr-only">username</label>
-      <input type="text" name="user" id="user" ngModel placeholder="User" autocomplete="username" required>
-      <p *ngIf="!loginForm.value.user" class="error">username required</p>
+      <label for="email" class="sr-only">email</label>
+      <input
+        type="text"
+        name="email"
+        id="email"
+        ngModel
+        placeholder="e-mail"
+        autocomplete="username"
+        required
+        [(ngModel)]="loginData.email"
+        #email="ngModel"
+      />
       <label for="email" class="sr-only">password</label>
-      <input type="password" name="password" id="password" placeholder="Password" autocomplete="current-password" required minlength="8" ngModel>
-      <p class="error" *ngIf="loginForm.value.password.length < 8">passwords must have a minimum of 8 characters.</p>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="password"
+        autocomplete="current-password"
+        required
+        [(ngModel)]="loginData.password"
+        #password="ngModel"
+      />
       <button type="submit" [disabled]="loginForm.invalid">log in</button>
-      <p *ngIf="loginError()">error logging in.</p> <!-- change css -->
+      <p *ngIf="loginError()">invalid email or password</p>
+      <!-- change css -->
     </form>
-    <p id="reg-text">Don't have an account? -
-      <a [routerLink]="['/register']" routerlinkactive="router-link-active">Register</a>
+    <p id="reg-text">
+      Don't have an account? -
+      <a [routerLink]="['/register']" routerlinkactive="router-link-active"
+        >Register</a
+      >
     </p>
   </div>
 </div>

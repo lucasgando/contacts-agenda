@@ -17,6 +17,7 @@ export class ContactIconComponent {
     address: '',
     email: '',
     profilePicture: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    description: ''
   };
 }

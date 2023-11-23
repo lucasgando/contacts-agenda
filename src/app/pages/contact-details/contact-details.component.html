@@ -1,0 +1,20 @@
+<div class="container">
+  <div id="head">
+    <contact-icon [contact]="contact"></contact-icon>
+    <h1>{{ contact.name + ' ' + contact.lastName }}</h1>
+  </div>
+  <div>
+    <span id="category"><h2>email:</h2><p>{{contact.email}}</p></span>
+    <span id="category"><h2>phone number:</h2><p>{{contact.phoneNumber}}</p></span>
+    <span id="category"><h2>address:</h2><p>{{contact.address}}</p></span>
+    <span id="category"><h2>description:</h2><p>{{contact.description}}</p></span>
+  </div>
+  <span id="buttons">
+    <button (click)="contactFormDialog.showModal()">Edit</button>
+    <button (click)="deleteContact()">Delete</button>
+  </span>
+</div>
+
+<dialog method="dialog" #contactFormDialog>
+  <app-new-contact (closeDialog)="contactFormDialog.close()" [contact]="contact"></app-new-contact>
+</dialog>

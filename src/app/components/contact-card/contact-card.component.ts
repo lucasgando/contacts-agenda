@@ -13,11 +13,12 @@ import { ContactIconComponent } from "../contact-icon/contact-icon.component";
 export class ContactCardComponent {
   @Input() contact: Contact = {
     id: 0,
-    name: '',
+    name: 'aaaaaaaaaaa',
     lastName: '',
     address: '',
     email: '',
-    profilePicture: '',
-    phoneNumber: ''
+    phoneNumber: '',
+    description: '',
+    profilePicture: ''
   }
 }

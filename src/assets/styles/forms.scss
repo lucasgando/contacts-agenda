@@ -2,11 +2,13 @@
 
 #container {
   font-family: Arial, Helvetica, sans-serif;
-  height: variables.$body-height;
+  height: fit-content;
+  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 5px;
+  margin: auto;
 }
 
 
@@ -22,7 +24,7 @@ h1{
 .form-container{
   max-width: 400px;
   border-radius: 8px;
-  background-color: variables.$background-color;
+  background-color: variables.$back-color;
   padding: 50px 30px;
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
 }
@@ -38,8 +40,8 @@ input{
 }
 
 button{
-  background-color: variables.$main-color-800;
-  color: variables.$font-color-light;
+  background-color: variables.$accents-color;
+  color: variables.$main-font-color;
   cursor: pointer;
   &[disabled]{
     background-color: gray;
@@ -47,8 +49,8 @@ button{
   }
 }
 
-a{
-  color:variables.$main-color-900;
+a {
+  color: variables.$background-border-color;
 }
 
 .error{

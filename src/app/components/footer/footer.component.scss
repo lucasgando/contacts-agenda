@@ -1,6 +1,19 @@
 @use "./../../../assets/styles/variables.scss";
 
-p{
-    text-align: center;
-    background-color: variables.$main-color-200;
+* {
+  color: variables.$main-font-color;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  background-color: variables.$main-color;
+  vertical-align: middle;
+  height: variables.$footer-height;
+  padding: 0px;
+}
+
+p {
+  margin: auto;
+  background-color: variables.$main-color;
 }

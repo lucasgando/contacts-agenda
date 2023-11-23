@@ -1,25 +1,61 @@
-<div>
-  <div>
-      <h1>Register</h1>
-      <form #registerForm="ngForm" (ngSubmit)="register()">
-          <label for="user">username</label>
-          <input type="text" name="user" id="user" ngModel
-              placeholder="User" autocomplete="username"
-              required>
-          <p *ngIf="!registerForm.value.user" class="error">this field is required.</p>
+<div id="container">
+  <div class="form-container">
+    <h1>register</h1>
+    <form #registerForm="ngForm" (ngSubmit)="register()">
+      <label for="user"></label>
+      <input
+        type="text"
+        name="user"
+        id="user"
+        placeholder="user"
+        autocomplete="username"
+        [(ngModel)]="registerData.username"
+        #user="ngModel"
+        required
+      />
+      <p *ngIf="!registerForm.value.user" class="error">
+        this field is required.
+      </p>
 
-          <label for="email">e-mail</label>
-          <input type="text" name="email" id="email" placeholder="E-Mail" required>
-          <p *ngIf="!registerForm.value.email" class="error">this field is required.</p>
+      <label for="email"></label>
+      <input
+        type="text"
+        name="email"
+        id="email"
+        placeholder="e-mail"
+        [(ngModel)]="registerData.email"
+        #email="ngModel"
+        required
+      />
+      <p *ngIf="!registerForm.value.email" class="error">
+        this field is required.
+      </p>
 
-          <label for="password">password</label>
-          <input type="password" name="password" id="password" placeholder="Password"
-              autocomplete="current-password" required minlength="8" ngModel required>
-          <p class="error" *ngIf="registerForm.value.password.length < 8">passwords need a minimum of 8 characters.</p>
+      <label for="password"></label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="password"
+        autocomplete="current-password"
+        required
+        minlength="8"
+        [(ngModel)]="registerData.password"
+        #password="ngModel"
+        required
+      />
+      <p class="error" *ngIf="registerForm.value.password.length < 8">
+        passwords need a minimum of 8 characters.
+      </p>
 
-          <button type="submit" [disabled]="registerForm.invalid">Register</button>
-          <p class="hidden-error">Error registering</p>
-      </form>
-      <p>Already have an account? - <a [routerLink]="['/login']" routerLinkActive="router-link-active">login</a></p>
+      <button type="submit" [disabled]="registerForm.invalid">register</button>
+      <p class="hidden-error" *ngIf="registerError()">this email is already taken</p>
+    </form>
+    <p>
+      already have an account? -
+      <a [routerLink]="['/login']" routerLinkActive="router-link-active"
+        >login</a
+      >
+    </p>
   </div>
 </div>
